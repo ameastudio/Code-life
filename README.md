@@ -1,32 +1,27 @@
-# Code Life 💙
+# Code Life — Code City v3
 
-A mobile-friendly coding academy that teaches **HTML → CSS → JavaScript** progressively.
+Phone-first local prototype. No Supabase/account is required.
 
-## Included
-- 24 beginner lessons
-- Learn → Practice → Quiz flow
-- Lesson locking/unlocking
-- Live preview + JavaScript console
-- Free playground
-- Progress %, streaks, and badges
-- Guest progress saved on the device
-- Optional Supabase email/password cloud sync
-- Installable PWA
+## Upload
+Replace the current Code Life repository files with the contents of this folder while keeping the folder structure intact, especially `assets/pets/` and `icons/`.
 
-## Upload to GitHub
-Upload **everything inside this folder** to the root of your `Code-life` repository. Keep the `icons` folder as a folder.
+GitHub Pages should remain set to `main` → `/(root)`.
 
-Then go to **Settings → Pages → Deploy from a branch → main → /(root)**.
+## What is included
+- Code City opens first (no Home tab)
+- Guided HTML → CSS → JavaScript path
+- Hard challenge levels and connected Boss Build website
+- Live coding previews inside lessons and Playground
+- Duolingo-style quiz + memory mix + spaced review tracking
+- Context-aware quick code keys above the phone keyboard
+- Four-new-lessons-per-day learning limit
+- XP, gold Code Coins and cyber-blue streak flame
+- Six persistent code pets with personalities
+- Tech evolution stages tied to XP
+- Interactive cyber bedroom, shop and Code Life-branded accessories
+- Code Arcade with capped daily rewards
+- Progress, mastery, Practice Again, achievements and Build Gallery
+- Settings for sound, haptics, dark mode, motion and extra explanations
+- PWA manifest + service worker for Add to Home Screen
 
-Your URL should become: `https://ameastudio.github.io/Code-life/`
-
-## Supabase
-1. Create/open your Supabase project.
-2. Go to **SQL Editor → New query**.
-3. Paste everything from `supabase-schema.sql` and Run it.
-4. Copy your **Project URL** and **publishable key**.
-5. Edit `supabase-config.js` and paste them there. Use only the public publishable key, never a service-role/secret key.
-6. In Supabase **Authentication → URL Configuration**, use your GitHub Pages URL as the Site URL and allowed redirect URL.
-
-## iPhone
-Open the published site in Safari → Share → **Add to Home Screen**.
+Everything saves to localStorage on the device/browser.
