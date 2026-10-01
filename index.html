@@ -9,38 +9,30 @@
   <meta name="apple-mobile-web-app-title" content="Code Life">
   <meta name="description" content="Code Life — Learn. Code. Create. Bite-sized HTML, CSS and JavaScript lessons.">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="./icons/icon.svg">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="./icons/icon-192.png">
   <link rel="stylesheet" href="./styles.css">
   <title>Code Life — Learn. Code. Create.</title>
 </head>
 <body>
   <div class="app-shell">
-    <aside class="sidebar" aria-label="Main navigation">
-      <a href="#home" class="logo" aria-label="Code Life home"><span class="logo-icon">&lt;/&gt;</span><span>code<span class="logo-accent">life</span><small>LEARN · CODE · CREATE</small></span></a>
+    <aside class="sidebar">
+      <a href="#home" class="logo"><span class="logo-icon">&lt;/&gt;</span><span>code<span class="logo-accent">life</span><small>LEARN · CODE · CREATE</small></span></a>
       <div class="sidebar-label">YOUR SPACE</div>
-      <nav id="desktop-nav" class="desktop-nav">
-        <a class="nav-link" data-page="home" href="#home"><span class="nav-symbol">⌂</span> Home</a>
-        <a class="nav-link" data-page="learn" href="#learn"><span class="nav-symbol">▤</span> My courses</a>
-        <a class="nav-link" data-page="playground" href="#playground"><span class="nav-symbol">⌘</span> Playground</a>
-        <a class="nav-link" data-page="profile" href="#profile"><span class="nav-symbol">♙</span> My progress</a>
+      <nav>
+        <a data-page="home" href="#home">⌂ Home</a>
+        <a data-page="learn" href="#learn">▤ My courses</a>
+        <a data-page="playground" href="#playground">⌘ Playground</a>
+        <a data-page="profile" href="#profile">♙ My progress</a>
       </nav>
-      <div class="sidebar-bottom"><span class="sidebar-sparkle">✧</span><strong>Little steps, big builds.</strong><p>Every great developer started with one line.</p></div>
+      <div class="sidebar-bottom">✧<strong>Little steps, big builds.</strong><p>Every great developer started with one line.</p></div>
     </aside>
-
     <div class="main-column">
-      <header class="topbar">
-        <span class="topbar-crumb">YOUR CODING JOURNEY <span>/</span> <strong id="crumb-title">Home</strong></span>
-        <div class="top-actions"><span id="top-streak" class="streak-pill">✦ 0 day streak</span><button id="top-account" class="avatar" type="button" aria-label="Open account">B</button></div>
-      </header>
-      <main id="app" tabindex="-1"><div class="loading">Warming up your coding studio…</div></main>
-      <footer class="footer">Made for curious minds ✦ Code Life</footer>
+      <header class="topbar"><span class="crumb">YOUR CODING JOURNEY <b>/</b> <strong id="crumb-title">Home</strong></span><div class="top-actions"><span id="top-streak" class="streak-pill">✦ 0 day streak</span><button id="top-account" class="avatar">B</button></div></header>
+      <main id="app"><div class="loading">Warming up your coding studio…</div></main>
+      <footer>Made for curious minds ✦ Code Life</footer>
     </div>
-    <nav class="mobile-nav" aria-label="Mobile navigation">
-      <a data-page="home" href="#home"><span>⌂</span>Home</a>
-      <a data-page="learn" href="#learn"><span>▤</span>Learn</a>
-      <a data-page="playground" href="#playground"><span>⌘</span>Code</a>
-      <a data-page="profile" href="#profile"><span>♙</span>Me</a>
-    </nav>
+    <nav class="mobile-nav"><a data-page="home" href="#home"><span>⌂</span>Home</a><a data-page="learn" href="#learn"><span>▤</span>Learn</a><a data-page="playground" href="#playground"><span>⌘</span>Code</a><a data-page="profile" href="#profile"><span>♙</span>Me</a></nav>
   </div>
   <div id="toast" role="status" aria-live="polite"></div>
   <script src="./curriculum.js"></script>
