@@ -35,7 +35,7 @@ function celebrate(){stop();action='celebrate';pet.classList.add('is-celebrating
  timer=setTimeout(()=>{stop();parts.replaceChildren();},1550);
 }
 function tap(){stop();action='pet';pet.classList.add('is-petted');say(['Heyyy! Ready to code? 💙','You got this, coder! ✨','I love learning with you! 🐾'][tapN++%3]);timer=setTimeout(stop,850);}
-[['walk',walk],['jump',jump],['blink',blink],['celebrate',celebrate]].forEach(([name,fn])=>document.getElementById(name)?.addEventListener('click',fn));
+[['walk',()=>walk(false)],['jump',jump],['blink',blink],['celebrate',celebrate]].forEach(([name,fn])=>document.getElementById(name)?.addEventListener('click',fn));
 walker.addEventListener('click',tap);
 walker.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tap();}});
 const notes={controller:'Code Arcade is next after you approve my movement! 🎮',closet:'My Code Life wardrobe is ready for outfits! 👕',desk:'That is my coding desk. 💻',bed:'Zzz... recharge time! 💤'};
