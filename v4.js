@@ -42,7 +42,7 @@ function decorateCity(){const city=document.querySelector('.city-world');if(!cit
 }
 function decoratePet(){const room=document.querySelector('.pet-room');if(!room||room.querySelector('[data-v4room]'))return;room.classList.add('v4-interactive-room');
  const items=[['city','Code City','🪐'],['evo','Evolution','✧'],['closet','Closet','👕'],['accessory','Accessories','🎧'],['laptop','Playground','💻'],['bed','Let your pet rest','💤'],['controller','Code Arcade','🎮'],['shop','Shop','🎁']];
- items.forEach(([key,meaning,glyph])=>{const b=btn('v4-room-thing v4-'+key,glyph,()=>roomAction(key));b.dataset.v4room=key;b.title=meaning;b.setAttribute('aria-label',meaning);room.append(b);});
+ items.forEach(([key,meaning,glyph])=>{const b=btn('v4-room-thing v4-'+key,glyph,(ev)=>{ev.stopPropagation();roomAction(key);});b.dataset.v4room=key;b.title=meaning;b.setAttribute('aria-label',meaning);room.append(b);});
  const shop=document.querySelector('.shop-grid')?.closest('.section');if(shop){shop.dataset.v4shop='true';shop.hidden=true;}
  const guide=node('p','v4-room-help','Tap objects in the room to explore. Tap your pet to play!');room.after(guide);
 }
