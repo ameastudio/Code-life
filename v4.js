@@ -6,7 +6,7 @@ const KEY='code-life-state-v3', PETS=[
  ['nova-owl','Nova Owl','Patient & wise'],['loop-fox','Loop Fox','Clever & creative'],
  ['chip-bunny','Chip Bunny','Bubbly & speedy'],['glitch-dino','Glitch Dino','Funny & chaotic']
 ];
-let step=0,selectedPet='pixel-pup';
+let step=0,selectedPet='pixel-pup',roomMode='';
 const state=()=>{try{return JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch{return {};}};
 const put=updates=>localStorage.setItem(KEY,JSON.stringify({...state(),...updates}));
 const node=(tag,cls,text)=>{const a=document.createElement(tag);if(cls)a.className=cls;if(text)a.textContent=text;return a;};
@@ -43,7 +43,7 @@ function decorateCity(){const city=document.querySelector('.city-world');if(!cit
 function decoratePet(){const room=document.querySelector('.pet-room');if(!room||room.querySelector('[data-v4room]'))return;room.classList.add('v4-interactive-room');
  const items=[['city','Code City','🪐'],['evo','Evolution','✧'],['closet','Closet','👕'],['accessory','Accessories','🎧'],['laptop','Playground','💻'],['bed','Let your pet rest','💤'],['controller','Code Arcade','🎮'],['shop','Shop','🎁']];
  items.forEach(([key,meaning,glyph])=>{const b=btn('v4-room-thing v4-'+key,glyph,(ev)=>{ev.stopPropagation();roomAction(key);});b.dataset.v4room=key;b.title=meaning;b.setAttribute('aria-label',meaning);room.append(b);});
- const shop=document.querySelector('.shop-grid')?.closest('.section');if(shop){shop.dataset.v4shop='true';shop.hidden=true;}
+ const shop=document.querySelector('.shop-grid')?.closest('.section');if(shop){shop.dataset.v4shop='true';shop.hidden=!roomMode;if(roomMode)shop.querySelectorAll('.shop-item').forEach(e=>{const name=e.querySelector('h4')?.textContent||'';e.hidden=roomMode==='closet'&&!/Hoodie|Jacket/i.test(name)||roomMode==='accessory'&&!/Headphones|Visor|Sign/i.test(name);});}
  const guide=node('p','v4-room-help','Tap objects in the room to explore. Tap your pet to play!');room.after(guide);
 }
 function roomAction(which){const room=document.querySelector('.pet-room'),shop=document.querySelector('[data-v4shop]');
@@ -52,7 +52,7 @@ function roomAction(which){const room=document.querySelector('.pet-room'),shop=d
  if(which==='laptop'){location.hash='#playground';return;}
  if(which==='bed'){const speech=room?.querySelector('.pet-speech');if(speech)speech.textContent='Charging up! Zzz…💙';room?.classList.add('v4-napping');return;}
  if(which==='evo'){document.querySelector('.pet-progress')?.scrollIntoView({behavior:'smooth',block:'center'});return;}
- if(shop){shop.hidden=false;shop.querySelectorAll('.shop-item').forEach(e=>{const name=e.querySelector('h4')?.textContent||'';e.hidden=which==='closet'&&!/Hoodie|Jacket/i.test(name)||which==='accessory'&&!/Headphones|Visor|Sign/i.test(name);});shop.scrollIntoView({behavior:'smooth',block:'center'});}
+ if(shop){roomMode=which;shop.hidden=false;shop.querySelectorAll('.shop-item').forEach(e=>{const name=e.querySelector('h4')?.textContent||'';e.hidden=which==='closet'&&!/Hoodie|Jacket/i.test(name)||which==='accessory'&&!/Headphones|Visor|Sign/i.test(name);});shop.scrollIntoView({behavior:'smooth',block:'center'});}
 }
 let pending=false;function decorate(){if(pending)return;pending=true;queueMicrotask(()=>{pending=false;const route=location.hash||'#lessons';if(route==='#lessons')decorateCity();if(route==='#pet')decoratePet();});}
 const app=document.getElementById('app');if(app)new MutationObserver(decorate).observe(app,{childList:true});
