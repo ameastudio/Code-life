@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#061b42"><title>Pixel Pup 3D Lab | Code Life</title>
+<link rel="stylesheet" href="./pet-lab.css"></head>
+<body>
+<div class="shell">
+ <header><a href="../" class="back" aria-label="Back to Code Life">‹</a><strong>Code <span>Life</span></strong><i>PIXEL PUP LAB</i></header>
+ <section class="scene-wrap">
+  <div class="skyline"></div><div id="scene" aria-label="Interactive 3D Pixel Pup in a cyber bedroom"></div>
+  <div class="scene-brand"><span class="lab-pill">3D CHARACTER TEST</span><h1>Meet Pixel Pup</h1><p>Same buddy. A whole new dimension.</p></div>
+  <div class="fallback" id="fallback" hidden><img src="../pixel-pup.png" alt="Original Pixel Pup illustration"><p>3D viewer couldn't load. You're seeing the original design instead.</p></div>
+  <div class="room-hint" id="hint">Tap Pixel Pup or the room objects ✨</div>
+ </section>
+ <section class="controls" aria-label="Pet actions">
+  <button type="button" id="walk">🐾 Walk</button><button type="button" id="jump">↟ Jump</button>
+  <button type="button" id="celebrate">✦ Celebrate</button><button type="button" id="blink">◡ Blink</button>
+ </section>
+ <section class="below">
+  <div class="panel"><h2>Pixel Pup’s room</h2><p>Tap objects in the 3D room, or use these buttons.</p>
+  <div class="objects"><button data-room="controller">🎮 Arcade</button><button data-room="closet">👕 Closet</button><button data-room="desk">💻 Desk</button><button data-room="bed">💤 Bed</button></div>
+  <div id="activity" class="activity" aria-live="polite">Try tapping Pixel Pup to say hello!</div></div>
+  <div class="panel reference"><h2>Original design reference</h2><img src="../pixel-pup.png" alt="Original Code Life Pixel Pup from the GitHub repository"><p>This is a 3D movement prototype, not the final faithful sculpt. Compare the face, ears, hoodie and proportions before approving it.</p></div>
+ </section>
+ <footer>This test lives separately from your main Code Life app.</footer>
+</div>
+<script src="./pet-lab.js" defer></script>
+</body></html>
