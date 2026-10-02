@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 1000" preserveAspectRatio="none">
+ <defs>
+  <linearGradient id="r" x2=".45" y2="1"><stop stop-color="#f7ffff"/><stop offset=".56" stop-color="#b2e2fa"/><stop offset="1" stop-color="#66cbff"/></linearGradient>
+  <filter id="g" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5"/></filter>
+ </defs>
+ <path d="M72 34 C82 96 306 77 306 161 S65 250 72 336 S308 430 303 515 S68 616 76 705 S313 810 299 862 S77 952 77 988"
+ fill="none" stroke="#04b8ff" stroke-width="66" opacity=".45" filter="url(#g)"/>
+ <path d="M72 34 C82 96 306 77 306 161 S65 250 72 336 S308 430 303 515 S68 616 76 705 S313 810 299 862 S77 952 77 988"
+ fill="none" stroke="#2584d4" stroke-width="60" opacity=".95" stroke-linecap="round"/>
+ <path d="M72 34 C82 96 306 77 306 161 S65 250 72 336 S308 430 303 515 S68 616 76 705 S313 810 299 862 S77 952 77 988"
+ fill="none" stroke="url(#r)" stroke-width="48" stroke-linecap="round"/>
+ <path d="M72 34 C82 96 306 77 306 161 S65 250 72 336 S308 430 303 515 S68 616 76 705 S313 810 299 862 S77 952 77 988"
+ fill="none" stroke="#edfaff" stroke-width="1.8" stroke-dasharray="11 25" stroke-linecap="round" opacity=".65"/>
+</svg>
