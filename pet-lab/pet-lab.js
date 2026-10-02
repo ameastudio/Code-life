@@ -3,12 +3,39 @@
 'use strict';
 const output=document.getElementById('activity'),mount=document.getElementById('scene');
 const say=t=>{output.textContent=t;};
-const fallback=()=>{document.getElementById('fallback').hidden=false;say('3D could not load. The original Pixel Pup artwork is shown instead.');};
-let THREE;
-try{THREE=await import('https://cdn.jsdelivr.net/npm/three@0.170.0/+esm');}catch(e){console.error('3D library unavailable',e);fallback();return;}
+const fallback=(reason)=>{document.getElementById('fallback').hidden=false;const msg='3D viewer unavailable: '+reason;document.getElementById('fallback').querySelector('p').textContent=msg;say(msg);setupFallbackActions();};
+function setupFallbackActions(){
+ const image=document.querySelector('#fallback img');
+ document.getElementById('walk').addEventListener('click',()=>animateFallback('walking','Walk! 🐾'));
+ document.getElementById('jump').addEventListener('click',()=>animateFallback('jumping','Boing! ↟'));
+ document.getElementById('celebrate').addEventListener('click',()=>animateFallback('celebrating','Yesss! ✦'));
+ document.getElementById('blink').addEventListener('click',()=>animateFallback('blinking','Peekaboo!'));
+ document.querySelectorAll('[data-room]').forEach(el=>el.addEventListener('click',()=>say(el.textContent.trim()+' opens after 3D is available.')));
+ image.addEventListener('click',()=>animateFallback('celebrating','Hey, coder! 💙'));
+}
+function animateFallback(name,comment){
+ const image=document.querySelector('#fallback img');image.className='';void image.offsetHeight;image.classList.add('fallback-'+name);say(comment+' (2D backup animation)');
+}
+let THREE;let loadFailure='';
+const libs=[
+ ['jsDelivr 0.158','https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js'],
+ ['unpkg 0.158','https://unpkg.com/three@0.158.0/build/three.module.js'],
+ ['esm.sh 0.158','https://esm.sh/three@0.158.0?bundle']
+];
+for(const [name,url] of libs){
+ try{say('Loading 3D engine ('+name+')…');THREE=await import(url);if(THREE?.WebGLRenderer){say('3D library ready. Preparing Pixel Pup…');break;}}
+ catch(e){console.warn('3D library source failed:',name,e);loadFailure=name+': '+(e?.message||'network blocked');}
+}
+if(!THREE?.WebGLRenderer){fallback('library download blocked. Last attempt: '+loadFailure);return;}
 const T=THREE;
 let renderer;
-try{renderer=new T.WebGLRenderer({antialias:true,alpha:true,powerPreference:'low-power'});}catch(e){console.error(e);fallback();return;}
+try{
+ renderer=new T.WebGLRenderer({antialias:false,alpha:false,powerPreference:'default',failIfMajorPerformanceCaveat:false});
+}catch(e){
+ console.error('3D rendering unavailable',e);
+ fallback('WebGL could not start on this browser. '+(e?.message||'Enable hardware acceleration and reload.'));
+ return;
+}
 renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.75));
 renderer.outputColorSpace=T.SRGBColorSpace;
 renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;
