@@ -1,6 +1,6 @@
 /* Code Life V5: approved illustration backgrounds.
    Loaded AFTER v4.css; retains the original GitHub logo and existing app behaviour.
-   Illustrated art belongs in assets/backgrounds so UI remains selectable/clickable. */
+   Illustrated art uses the image files in the repository root, kept separate from clickable UI. */
 :root{--sky:#3cddff;--inkblue:#071c4b;--glass:#062d73d9}
 body{background:#061a45}
 .app-shell{background:linear-gradient(180deg,#061940,#113d82 45%,#164995 100%)}
@@ -16,19 +16,19 @@ body[data-scene="lesson"] .page,
 body[data-scene="progress"] .page,
 body[data-scene="arcade"] .page,
 body[data-scene="studio"] .page{
- background-image:linear-gradient(180deg,#031a47af 0%,#06265cbd 36%,#062150eb 100%),url('./assets/backgrounds/course-city.webp');
+ background-image:linear-gradient(180deg,#031a47af 0%,#06265cbd 36%,#062150eb 100%),url('./course-city.webp');
  background-position:center top,center top;background-size:cover,cover;background-repeat:no-repeat;
  background-attachment:scroll;min-height:100dvh;
 }
 body[data-scene="lesson"] .page,body[data-scene="studio"] .page{
- background-image:linear-gradient(180deg,#05162dbf,#04132fe5 65%),url('./assets/backgrounds/studio.webp');
+ background-image:linear-gradient(180deg,#05162dbf,#04132fe5 65%),url('./studio.webp');
  background-position:center top,center top;background-size:cover,cover;
 }
 body[data-scene="progress"] .page{
- background-image:linear-gradient(180deg,#08173acc,#071e48e9 73%),url('./assets/backgrounds/progress-city.webp');
+ background-image:linear-gradient(180deg,#08173acc,#071e48e9 73%),url('./progress-city.webp');
 }
 body[data-scene="arcade"] .page{
- background-image:linear-gradient(180deg,#061636bb,#03142ce9 73%),url('./assets/backgrounds/pet-bedroom.webp');
+ background-image:linear-gradient(180deg,#061636bb,#03142ce9 73%),url('./pet-bedroom.webp');
 }
 body[data-scene="pet"] .page{background:linear-gradient(180deg,#071638,#103f91)}
 body[data-scene="courses"] .card,body[data-scene="progress"] .card,
@@ -72,7 +72,7 @@ body[data-scene="lesson"] .card,body[data-scene="studio"] .card{
 
 /* Onboarding uses a real skyline illustration and keeps EVERY option a real button. */
 #v4-setup{
- background-image:linear-gradient(180deg,#061f58a9 0%,#0741a25b 35%,#062c62ac 100%),url('./assets/backgrounds/splash-sky.webp')!important;
+ background-image:linear-gradient(180deg,#061f58a9 0%,#0741a25b 35%,#062c62ac 100%),url('./splash-sky.webp')!important;
  background-position:center,center;background-size:cover,cover;background-repeat:no-repeat;
 }
 #v4-setup .setup-panel{
@@ -121,7 +121,7 @@ body[data-scene="city"] .city-world{
 body[data-scene="city"] .city-gate{
  margin:0;min-height:282px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
  padding:30px 16px 22px;border:0;border-radius:0;position:relative;
- background-image:linear-gradient(180deg,#071b49a8,#155bc062 62%,#65cbf92e 100%),url('./assets/backgrounds/code-city-gate.webp')!important;
+ background-image:linear-gradient(180deg,#071b49a8,#155bc062 62%,#65cbf92e 100%),url('./code-city-gate.webp')!important;
  background-position:center top,center 48%;background-size:cover,cover;box-shadow:none;
 }
 body[data-scene="city"] .city-gate:before,body[data-scene="city"] .city-gate:after{display:none}
@@ -142,14 +142,14 @@ body[data-scene="city"] .zone{
  position:relative;overflow:hidden;isolation:isolate;margin:0;min-height:910px;
  padding:40px clamp(13px,5vw,29px) 72px;border:0;border-top:1px solid #c7efff99;
  background-color:#3e98d1!important;
- background-image:linear-gradient(180deg,#07194774 0,#0d3b7b3b 35%,#034d7882 100%),url('./assets/backgrounds/html-town.webp')!important;
+ background-image:linear-gradient(180deg,#07194774 0,#0d3b7b3b 35%,#034d7882 100%),url('./html-town.webp')!important;
  background-position:center top,center center;background-size:cover,cover;
 }
 body[data-scene="city"] #zone-css{
- background-image:linear-gradient(180deg,#041747a9 0,#293aa243 48%,#083f7b88 100%),url('./assets/backgrounds/css-district.webp')!important;
+ background-image:linear-gradient(180deg,#041747a9 0,#293aa243 48%,#083f7b88 100%),url('./css-district.webp')!important;
 }
 body[data-scene="city"] #zone-js{
- background-image:linear-gradient(180deg,#031338ba 0,#0835704f 35%,#1c3b69a1 100%),url('./assets/backgrounds/javascript-city.webp')!important;
+ background-image:linear-gradient(180deg,#031338ba 0,#0835704f 35%,#1c3b69a1 100%),url('./javascript-city.webp')!important;
 }
 body[data-scene="city"] .zone:before,body[data-scene="city"] .zone:after{display:none!important}
 body[data-scene="city"] .zone.locked{filter:none;opacity:1}
@@ -172,7 +172,7 @@ body[data-scene="city"] .path{display:flex;flex-direction:column;gap:10px;paddin
 body[data-scene="city"] .path:before{
  content:"";position:absolute;z-index:1;inset:0!important;left:0!important;top:0!important;
  width:100%!important;height:100%!important;transform:none!important;opacity:.92;
- background:url('./assets/backgrounds/winding-road.svg') center center/100% 100% no-repeat!important;
+ background:url('./winding-road.svg') center center/100% 100% no-repeat!important;
  clip-path:none!important;border:0!important;box-shadow:none!important;border-radius:0;
  pointer-events:none;
 }
@@ -199,7 +199,7 @@ body[data-scene="city"] .checkpoint:nth-child(4n+2) .map-pet-wrap,body[data-scen
 body[data-scene="pet"] .pet-room{
  height:min(73vh,615px)!important;min-height:440px!important;position:relative;overflow:hidden;
  border-radius:20px;border:2px solid #73deff;
- background-image:linear-gradient(180deg,#031a4620,#04133d0c 72%,#00173541),url('./assets/backgrounds/pet-bedroom.webp')!important;
+ background-image:linear-gradient(180deg,#031a4620,#04133d0c 72%,#00173541),url('./pet-bedroom.webp')!important;
  background-position:center,center center;background-size:cover,cover;
  box-shadow:0 0 22px #06aaff98;
 }
@@ -230,7 +230,7 @@ body[data-scene="pet"] .v4-controller{left:7%!important;bottom:7%!important}
 body[data-scene="pet"] .v4-shop{right:7%!important;bottom:7%!important}
 /* The playground retains an actual editable code panel and iframe on top of its illustration. */
 body[data-scene="studio"] .studio-bg{
- background-image:linear-gradient(180deg,#041a4db5,#0a3279cf 80%),url('./assets/backgrounds/studio.webp')!important;
+ background-image:linear-gradient(180deg,#041a4db5,#0a3279cf 80%),url('./studio.webp')!important;
  background-position:center,center 25%;background-size:cover,cover;
  min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;
  border-color:#73ddff;box-shadow:0 0 21px #198cff67;
