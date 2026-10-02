@@ -3,3 +3,16 @@
 .controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;padding:12px 11px;background:#071b47;border-top:1px solid #48c2ff}.controls button,.objects button{border:1px solid #5fc4ff;background:linear-gradient(#164c9e,#083478);color:white;border-radius:13px;min-height:48px;font-weight:800;font-size:12px}.controls button:active,.objects button:active{transform:scale(.96)}button:focus-visible{outline:3px solid #fff;outline-offset:2px}
 .below{padding:16px;display:grid;gap:13px}.panel{border:1px solid #2c74bb;background:linear-gradient(150deg,#092a64,#081936);border-radius:19px;padding:18px}.panel h2{margin:0 0 7px;font-size:17px}.panel p{margin:0 0 13px;color:#b9d8ff;font-size:12px;line-height:1.5}.objects{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.activity{border-radius:12px;margin-top:12px;background:#0e3b79;padding:12px;font-size:13px;min-height:40px;color:#b8eeff}.reference{display:flex;flex-direction:column;align-items:flex-start}.reference img{max-height:260px;max-width:100%;object-fit:contain;background:#eaf5ff;border-radius:14px;align-self:center;margin:9px 0}.reference p{margin:0}footer{text-align:center;padding:15px;color:#9ec8f1;font-size:11px}
 @media(min-width:650px){.below{grid-template-columns:1.3fr 1fr}.scene-wrap{height:650px}}@media(prefers-reduced-motion:reduce){button{transition:none!important}}
+/* Explicitly labeled animated backup, used only when genuine 3D is unavailable */
+#fallback{background:radial-gradient(ellipse at 50% 55%,#2070cd,#081945 75%);border:0}
+#fallback img{width:min(280px,79%);height:auto;cursor:pointer;object-fit:contain;transform-origin:50% 86%;filter:drop-shadow(0 16px 16px #04194099)}
+#fallback p{border-radius:12px;border:1px solid #71cdfa;background:#061a3ee6;color:#fff;padding:12px;max-width:330px;line-height:1.45}
+@keyframes fallbackWalk{0%,100%{transform:translateX(-28px) rotate(-4deg)}50%{transform:translateX(27px) rotate(4deg)}}
+@keyframes fallbackJump{0%,100%{transform:translateY(0)}45%{transform:translateY(-67px)}}
+@keyframes fallbackCelebrate{0%,100%{transform:rotate(0) scale(1)}25%{transform:rotate(-10deg) scale(1.07)}65%{transform:rotate(9deg) scale(1.09)}}
+@keyframes fallbackBlink{0%,100%{transform:scaleY(1)}48%{transform:scaleY(.93)}}
+#fallback img.fallback-walking{animation:fallbackWalk 1.4s ease-in-out 2}
+#fallback img.fallback-jumping{animation:fallbackJump .85s ease-in-out 1}
+#fallback img.fallback-celebrating{animation:fallbackCelebrate 1.1s ease-in-out 1}
+#fallback img.fallback-blinking{animation:fallbackBlink .25s ease-in-out 1}
+@media(prefers-reduced-motion:reduce){#fallback img[class^="fallback-"]{animation:none!important}}
