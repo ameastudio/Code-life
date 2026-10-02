@@ -151,7 +151,7 @@ function pathNodes(){const nodes=[];for(const track of TRACK_ORDER){const ls=les
 const PATH_NODES=pathNodes();
 function nodeDone(n){if(n.type==='lesson')return completed(n.id);if(n.type==='challenge')return challengeDone(n.id);return bossDone(n.track);}
 function nodeIndex(n){return PATH_NODES.findIndex(x=>x.id===n.id);}
-function nodeUnlocked(n){const i=nodeIndex(n);return i===0||nodeDone(PATH_NODES[i-1]);}
+function nodeUnlocked(n){if(state.setupLevel==='advanced'&&n.type==='lesson')return true;if(state.setupLevel==='intermediate'&&n.type==='lesson'&&n.track==='css')return true;const i=nodeIndex(n);return i===0||nodeDone(PATH_NODES[i-1]);}
 function currentNode(){return PATH_NODES.find(n=>nodeUnlocked(n)&&!nodeDone(n))||null;}
 function nodeDailyLocked(n){return n.type==='lesson'&&!nodeDone(n)&&nodeUnlocked(n)&&learningLimitReached();}
 function trackProgress(track){const ls=lessons(track),done=ls.filter(l=>completed(l.id)).length;const boss=bossDone(track)?1:0;return {done,total:ls.length,pct:Math.round(((done+boss)/(ls.length+1))*100)};}
@@ -253,7 +253,7 @@ function resetAll(){if(!confirm('Reset Code Life progress, coins, pet and projec
 function insertKey(targetId,key){const el=document.getElementById(targetId);if(!el)return;const start=el.selectionStart??el.value.length,end=el.selectionEnd??start;el.value=el.value.slice(0,start)+key+el.value.slice(end);const pos=start+key.length;el.focus();el.setSelectionRange(pos,pos);el.dispatchEvent(new Event('input',{bubbles:true}));}
 function startDuePractice(){const due=dueReviews();if(due.length)return route(`lesson/${due[0]}`);toast('Nothing is due for review right now. Nice work 🧠');}
 function jumpZone(track){route('lessons');setTimeout(()=>document.getElementById(`zone-${track}`)?.scrollIntoView({behavior:state.settings.reduceMotion?'auto':'smooth',block:'start'}),80);}
-function handleRoute(){normalizeDaily();updateHud();applySettings();const h=location.hash.replace(/^#/,'')||'lessons';if(h.startsWith('lesson/'))renderLesson(h.split('/')[1]);else if(h.startsWith('challenge/')){const [,track,part]=h.split('/');ui.challenge=null;renderChallenge(track,Number(part));}else if(h.startsWith('boss/')){ui.bossTab=h.split('/')[1];renderBoss(h.split('/')[1]);}else if(h.startsWith('build/'))renderBuildPreview(h.split('/')[1]);else if(h==='courses')renderCourses();else if(h==='playground')renderPlayground();else if(h==='progress')renderProgress();else if(h==='pet')renderPet();else if(h==='arcade'){ui.arcadeIndex=null;ui.arcadeAnswered=false;renderArcade();}else renderLessons();if(!state.pet)setTimeout(showPetPicker,20);}
+function handleRoute(){normalizeDaily();updateHud();applySettings();const h=location.hash.replace(/^#/,'')||'lessons';if(h.startsWith('lesson/'))renderLesson(h.split('/')[1]);else if(h.startsWith('challenge/')){const [,track,part]=h.split('/');ui.challenge=null;renderChallenge(track,Number(part));}else if(h.startsWith('boss/')){ui.bossTab=h.split('/')[1];renderBoss(h.split('/')[1]);}else if(h.startsWith('build/'))renderBuildPreview(h.split('/')[1]);else if(h==='courses')renderCourses();else if(h==='playground')renderPlayground();else if(h==='progress')renderProgress();else if(h==='pet')renderPet();else if(h==='arcade'){ui.arcadeIndex=null;ui.arcadeAnswered=false;renderArcade();}else renderLessons();if(!state.pet)setTimeout(()=>{if(!window.CODE_LIFE_V4)showPetPicker();},20);}
 
 document.addEventListener('click',e=>{
   const nav=e.target.closest('[data-nav]');if(nav)return route(nav.dataset.nav);
