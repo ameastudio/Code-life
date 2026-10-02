@@ -1,0 +1,76 @@
+
+/* CODE LIFE — BLUE CYBER CITY THEME */
+:root{--cyber:#28caff;--navy:#061940;--blue:#086ff0}
+body{background:linear-gradient(#061940,#125bb3 58%,#dbedff);color:#ecf8ff}
+.app-shell{max-width:670px;margin:0 auto;background:linear-gradient(#071940,#144c9c 560px,#ddedff 1060px);min-height:100dvh}
+.page{max-width:660px;padding:18px 14px 115px}
+.hud{position:sticky;top:0;z-index:110;background:linear-gradient(110deg,#061635f6,#0e3e99f6,#0b2154f6);border-bottom:1px solid #72cbff;box-shadow:0 5px 20px #00245e88;backdrop-filter:blur(15px)}
+.brand-word{color:#fff;text-shadow:0 2px 12px #0ba5ff}.brand-word strong{color:#4ae7ff}
+.xp-stat,.coin-stat,.streak-stat{background:#061b47ae;color:#fff;border-color:#4c9fffa6}.xp-stat b{color:#50dfff}.hud-xp-track{background:#071b48}
+.bottom-nav{z-index:105;background:linear-gradient(130deg,#061635f8,#073e93f8 55%,#091c48fc);border:1px solid #4ab8ff;border-radius:23px;box-shadow:0 0 20px #128dff80;backdrop-filter:blur(18px);bottom:8px}
+.bottom-nav button{color:#deecff;gap:6px}.bottom-nav button.active{color:white;background:linear-gradient(155deg,#1390eb,#0757d8);border:1px solid #81e7ff;border-radius:16px;box-shadow:0 0 18px #0ab6ff}
+.title{color:white;text-shadow:0 1px 10px #158aff}.eyebrow{color:#77e9ff}.subtitle{color:#d1e6ff}
+.card,.course-card,.lesson-card,.recall-box{color:#f4faff;background:linear-gradient(148deg,#133b7bea,#091d49f3);border:1px solid #4299ef;border-radius:19px;box-shadow:inset 0 1px 0 #93cfff33,0 12px 24px #0216414d}
+.card h2,.card h3,.card h4,.lesson-card h2,.lesson-card p{color:white}
+.btn.primary{color:white;background:linear-gradient(115deg,#0a54e4,#17c1f6);border:1px solid #8cf2ff;box-shadow:0 0 17px #17aaff88}
+.btn.soft,.btn.outline{background:#143a75;color:#effaff;border:1px solid #429ae8}
+.pet-bubble{background:linear-gradient(110deg,#0b2c6e,#0c4388);border:1px solid #4ecaff;color:#fff;box-shadow:0 4px 22px #068efa69}
+.pet-bubble p,.pet-bubble strong{color:#fff}.pet-thumb{animation:petFloat 3s ease-in-out infinite;filter:drop-shadow(0 0 8px #5be1ff)}
+.lesson-card .example-code{background:#041631;color:#abecff;border:1px solid #4aa1e9}
+.breakdown,.recall-box{background:#0b2a62;color:#effaff}.break-code{color:#7deaff}
+.editor,.code-box,.play-editor{background:#061633;color:#c1efff;border-color:#3779c8}
+.code-key{background:linear-gradient(#16498c,#082251);color:#fff;border:1px solid #458fee}.quiz-option{background:#102f65;color:#fff;border-color:#3b8ac9}.quiz-option.selected{background:#1762ac;color:#fff}
+.studio-bg,.boss-hero,.arcade-shell{background:linear-gradient(140deg,#081942,#1253a4 68%,#13a6dc);border-color:#419de9}
+/* CODE CITY MAP — one winding road, no lesson label cards */
+.city-world{margin:-10px -8px 0;border:0;border-radius:0;background:linear-gradient(180deg,#17448f,#65b8ff 350px,#caeaff);box-shadow:none;isolation:isolate}
+.city-world:before{display:none}.city-world:after{opacity:.4;z-index:-1}
+.city-gate{border:0;border-radius:0;margin:0;padding:64px 12px 39px;min-height:206px;background:radial-gradient(circle at 50% 76%,#17cfffaa,transparent 65%),linear-gradient(#03183f,#1450b4 70%,#a7deff);box-shadow:inset 0 -14px 25px #5cdfff88}
+.city-gate .city-logo{display:none}.city-gate h1{font-size:clamp(26px,7vw,39px);font-weight:1000;line-height:1.05;text-shadow:0 0 17px #75dbff,0 2px 4px #002859}.city-gate p{font-size:13px;font-weight:900;color:white}
+.city-toolbar{padding:8px 13px;gap:7px}.city-toolbar .btn{background:#0e397de8;color:white;border:1px solid #6acfff;font-size:11px;box-shadow:0 0 10px #3dbfff77}
+.arcade-card{display:none}.city-map{padding:0}
+.zone{position:relative;overflow:hidden;margin:0;padding:66px 18px 85px;min-height:930px;border-top:2px solid #fff8;isolation:isolate;background:radial-gradient(circle at 80% 15%,#ccf8ffcc,transparent 20%),linear-gradient(160deg,#68b6ff,#a3d7ff 44%,#c2e6ff 73%,#519fdd)}
+.zone:before{content:"";z-index:-1;position:absolute;left:-9%;right:-9%;top:7px;height:318px;opacity:.7;background:linear-gradient(90deg,transparent 0 4%,#385ca6 4% 12%,transparent 12% 17%,#3777cb 17% 26%,transparent 26% 30%,#234c95 30% 40%,transparent 40% 48%,#5bacdf 48% 56%,transparent 56% 61%,#1c58ad 61% 68%,transparent 68% 73%,#4497cc 73% 83%,transparent 83% 88%,#2251a0 88% 100%);clip-path:polygon(0 100%,0 62%,7% 62%,7% 26%,15% 26%,15% 68%,20% 68%,20% 43%,27% 43%,27% 13%,36% 13%,36% 57%,43% 57%,43% 34%,51% 34%,51% 78%,58% 78%,58% 5%,66% 5%,66% 52%,73% 52%,73% 30%,81% 30%,81% 61%,87% 61%,87% 8%,94% 8%,94% 43%,100% 43%,100% 100%)}
+.zone:after{z-index:-1;content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 13% 47%,#fff9,transparent 19%),radial-gradient(circle at 89% 68%,#fff8,transparent 19%),linear-gradient(180deg,transparent 72%,#f5fbffbb)}
+.zone-css{background:radial-gradient(circle at 12% 28%,#ffbfff77,transparent 27%),linear-gradient(155deg,#254b9b,#7394dc 47%,#bcd8f6)}
+.zone-js{background:radial-gradient(circle at 75% 13%,#ffcc5d82,transparent 29%),linear-gradient(155deg,#0c2756,#367cbc 53%,#a1dcf8)}
+.zone.locked{opacity:1;filter:none}.zone.locked .checkpoint.locked{opacity:.6}
+.zone-sign{position:relative;z-index:3;width:max-content;margin:0 auto 27px;padding:13px 19px;font-size:clamp(17px,5vw,24px);font-weight:1000;letter-spacing:1px;color:white;text-shadow:0 0 7px #81f1ff;border:2px solid #98e8ff;background:linear-gradient(125deg,#061c4a,#0757ba,#0a91ce);border-radius:14px;box-shadow:0 5px 0 #042a6c,0 0 24px #18d5ff99}
+.zone-sign.css{border-color:#ffc4f4;background:linear-gradient(130deg,#0b2a72,#5a55ba,#cd76d3)}.zone-sign.js{border-color:#ffdf88;background:linear-gradient(130deg,#0c275a,#765f3b,#f4a31d)}
+.path{display:flex;flex-direction:column;gap:7px;padding:10px 14px;position:relative}
+.path:before{content:"";position:absolute;left:50%;top:18px;bottom:17px;transform:translateX(-50%);width:63%;border:7px solid #50b1fa;background:linear-gradient(90deg,#e4faff,#6ac9ff 50%,#e6faff);box-shadow:0 0 19px #259effad;clip-path:polygon(42% 0,92% 8%,100% 22%,39% 32%,4% 45%,5% 56%,88% 68%,92% 81%,39% 100%,7% 100%,39% 81%,68% 73%,2% 64%,0 43%,74% 24%,85% 13%,46% 8%);opacity:.86}
+.checkpoint{min-height:82px;justify-content:flex-start!important}.checkpoint:nth-child(4n + 2),.checkpoint:nth-child(4n + 3){justify-content:flex-end!important}
+.checkpoint-node{display:none}.checkpoint-card{z-index:4;position:relative;flex:none;display:grid;place-items:center;width:65px;height:56px;border:4px solid #98f5ff;border-radius:50%;padding:0;background:linear-gradient(#d5ffff,#4ac0ff 35%,#0059c7 88%);box-shadow:0 7px 0 #01418e,0 12px 9px #093d7777,0 0 18px #04cfff;color:white;text-align:center;transition:transform .2s}
+.stone-number{font-size:23px;font-weight:1000;color:white;text-shadow:0 2px 4px #054991}
+.checkpoint.ready .checkpoint-card{border-color:white;box-shadow:0 6px 0 #0059a4,0 0 30px #b2ffff;animation:checkpointPulse 2.2s infinite}
+.checkpoint.done .checkpoint-card{background:linear-gradient(#ddffff,#0ecbff,#1067d6)}
+.checkpoint.locked .checkpoint-card{background:linear-gradient(#b5cadb,#6c8faf,#374e7a);border-color:#e2edf5;box-shadow:0 7px 0 #364e71}
+.checkpoint.challenge .checkpoint-card{border-radius:15px;background:linear-gradient(#8eeeff,#6063d9)}
+.checkpoint.boss .checkpoint-card{width:75px;height:64px;border-radius:18px;background:linear-gradient(#ffedaa,#f8bb31,#b9770a);border-color:#fff2ac}
+.map-pet-wrap{z-index:8;left:calc(50% + 12px);top:-17px;width:83px;height:83px;pointer-events:none}.pet-stage-badge{display:none}
+.v4-advanced{margin:12px;background:#0c4488;color:#fff;padding:13px;border-radius:13px;font-size:12px}
+/* PET ROOM: visual objects rather than a row of labeled cards */
+.pet-room{position:relative;min-height:480px;height:480px;overflow:hidden;background:radial-gradient(circle at 52% 82%,#2282f079,transparent 52%),linear-gradient(#04112e 0 7%,#103c86 8% 66%,#091a46 66% 71%,#192b55 71%);border:1px solid #58c9ff;box-shadow:0 0 25px #007ae788}
+.pet-room:before{left:4%;top:9%;width:44%;height:38%;border:7px solid #57c9ff;background:linear-gradient(#111a50,#0a62c5 56%,#36c3ff);box-shadow:inset 0 0 21px #40caff,0 0 14px #38bcff}
+.pet-room:after{top:8%;right:7%;background:#0c275d;color:#65e2ff;border:1px solid #5bcbff;text-shadow:0 0 7px #0ff}
+.room-pet-wrap{z-index:4;left:33%;bottom:17%;width:38%;height:35%;animation:roamRoom 7.5s ease-in-out infinite alternate}
+.room-bed{left:4%;bottom:16%;width:32%;height:13%;background:#103979;border-color:#67cfff;box-shadow:0 12px 0 #0a1c43}
+.room-desk{right:5%;bottom:24%;width:26%;background:#376cce;box-shadow:0 9px 0 #0e275c}
+.room-desk:before{width:76%;left:10%;height:48px;background:#0a2d68;color:#7defff;border:2px solid #8acbff}
+.room-rug{width:63%;bottom:5%}.pet-speech{z-index:8;top:48%;left:auto;right:3%;max-width:41%;padding:9px;background:#0c3371;color:white;border:1px solid #61d8ff}
+.v4-room-thing{position:absolute;z-index:10;min-width:48px;min-height:48px;padding:4px;border:0;display:grid;place-items:center;background:transparent;font-size:30px;filter:drop-shadow(0 0 8px #2acfff);cursor:pointer}
+.v4-room-thing:focus-visible{outline:2px solid white;border-radius:12px}
+.v4-city{left:3%;top:4%}.v4-evo{left:45%;top:3%}.v4-closet{right:11%;top:15%;width:28%;height:24%;background:linear-gradient(90deg,#0d2861,#1655a3 49%,#071d50 50%,#164a8c);border:3px solid #8ee4ff;border-radius:9px;color:#bbf4ff;box-shadow:inset 0 0 14px #55ceff}.v4-accessory{right:4%;top:3%}.v4-laptop{right:11%;bottom:30%}.v4-bed{left:9%;bottom:26%}.v4-controller{left:5%;bottom:5%}.v4-shop{right:5%;bottom:4%}
+.v4-room-help{text-align:center;color:#b8e7ff;font-size:12px;padding:7px}.v4-napping .room-pet-wrap{animation:petFloat 4s ease-in-out infinite}
+[data-v4shop][hidden],.shop-item[hidden]{display:none!important}
+/* ONBOARDING */
+#v4-setup{position:fixed;z-index:1000;inset:0;background:linear-gradient(#041438eb,#1859b9e8),radial-gradient(circle,#74d8ff,#153f94);overflow-y:auto;display:flex;justify-content:center;color:white}
+.setup-panel{width:min(100%,530px);min-height:100%;padding:25px 18px 45px;background:radial-gradient(ellipse at 50% 55%,#2a93f966,transparent 65%),linear-gradient(#061944,#1440a6 67%,#07235e)}
+.setup-brand{display:flex;align-items:center;gap:10px;font-weight:1000;font-size:23px;margin:8px 0 30px;justify-content:center}.setup-mark{padding:10px;border-radius:13px;background:linear-gradient(#28ceff,#125bee);border:1px solid #acf5ff;box-shadow:0 0 16px #35b7ff}
+.setup-progress{text-align:center;letter-spacing:2px;color:#8be8ff;font-size:11px;font-weight:900;margin:5px 0 22px}.setup-title{font-size:clamp(25px,8vw,38px);line-height:1.1;text-align:center;text-shadow:0 3px 15px #4bafff;margin:18px auto;max-width:430px}.setup-desc{text-align:center;color:#d5f1ff;margin:0 auto 20px;max-width:340px}.setup-skyline{text-align:center;font-size:30px;color:#8febff}.setup-hero-pet{width:min(80%,300px);display:block;margin:9vh auto 1vh;filter:drop-shadow(0 0 27px #3fbbff);animation:petFloat 3.3s ease-in-out infinite}
+.setup-option{display:flex;align-items:center;gap:15px;width:100%;min-height:92px;text-align:left;padding:13px 17px;margin:10px 0;border-radius:20px;border:2px solid #4fbdff;background:linear-gradient(100deg,#0a2b69,#1664cf);color:white;box-shadow:0 7px 15px #08194855}.setup-option.selected,.setup-pet-choice.selected{border-color:#b5ffff;box-shadow:0 0 20px #3de4ffcc;background:#215abb}.setup-symbol{font-size:36px}.setup-option-words{flex:1}.setup-option strong,.setup-option small{display:block}.setup-option strong{font-size:16px}.setup-option small{font-size:12px;color:#badaff;margin-top:4px}.setup-arrow{font-size:30px;color:#bafcff}
+.setup-role-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.setup-role-grid .setup-option{min-height:155px;flex-direction:column;align-items:flex-start;margin:0}.setup-role-grid .setup-option-words{flex:none}.setup-role-grid .setup-arrow{display:none}
+.setup-pet-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.setup-pet-choice{display:grid;justify-items:center;padding:9px 4px;background:linear-gradient(#e7f8ff,#b4dbff);color:#0a2352;border:3px solid #66acff;border-radius:20px;min-width:0}.setup-pet-choice img{width:100%;height:140px;object-fit:contain;filter:drop-shadow(0 4px 5px #284d9a66)}.setup-pet-choice strong,.setup-pet-choice small{display:block}.setup-pet-choice small{font-size:10px;color:#385a94}
+.setup-guide{text-align:center;color:#c0ecff;font-size:12px;margin:18px auto}.setup-primary{width:100%;display:block;margin:20px auto 0;padding:17px;border-radius:100px;border:2px solid #9df6ff;color:#fff;font-weight:1000;font-size:17px;background:linear-gradient(115deg,#137aff,#22caff);box-shadow:0 0 18px #1acfff}.setup-back{display:block;margin:14px auto;background:transparent;color:white;border:0;font-weight:800}
+@media(min-width:690px){.app-shell{border-left:1px solid #2d86da;border-right:1px solid #2d86da}}
+@media(max-width:360px){.brand-word{font-size:16px}.setup-pet-choice img{height:110px}.page{padding-left:10px;padding-right:10px}.checkpoint-card{width:58px;height:53px}}
+@media(prefers-reduced-motion:reduce){.setup-hero-pet,.checkpoint.ready .checkpoint-card,.room-pet-wrap{animation:none!important}}
